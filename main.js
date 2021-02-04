@@ -178,4 +178,9 @@ function countInventory(inventoryToCount) {
   const displayTotalInventory = document.getElementById('totalStock'); 
   displayTotalInventory.textContent = `Het totale aantal schermen dat nog op voorraad is: ${countInventory(inventory)}`;
 
+ //Opdracht 2a:** Gebruik een array-methode om een array te maken met alle tv-type namen.
+ const televisionTypes = inventory.map((type) => {
+  return 'Type televisie: ' + type.name;
+});
 
+  console.log(televisionTypes)
