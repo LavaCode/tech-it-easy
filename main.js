@@ -180,7 +180,56 @@ function countInventory(inventoryToCount) {
 
  //Opdracht 2a:** Gebruik een array-methode om een array te maken met alle tv-type namen.
  const televisionTypes = inventory.map((type) => {
-  return 'Type televisie: ' + type.name;
-});
+    return `Type televisie: , ${type.name}`;
+  }); 
+  console.log(`backstage info 'Alle televisie types': ${televisionTypes}`);
 
-  console.log(televisionTypes)
+  //Opdracht 2b:** Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn.
+  const televisionsSoldOut = inventory.filter((soldOut) => {
+        return (soldOut.originalStock === soldOut.sold);
+  });
+  console.log(televisionsSoldOut);
+
+  //Opdracht 2c:** Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken.
+  const ambilightTelevisions = inventory.filter((backlight) => {
+      if(backlight.ambilight){    
+        return backlight;
+      }
+  });
+  console.log(ambilightTelevisions);
+
+  //Opdracht 2d:** Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
+  const televisionPrices = inventory.map((type) => {
+    return type.price;
+  })
+  
+  televisionPrices.sort((a, b) => {
+    if (a > b) {
+        return 1;
+    }
+    if (a <  b) {
+        return -1;
+    }
+    return 0;
+ })
+ 
+ console.log(televisionPrices); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const tele = students.filter((student) => {
+  //   return student.course === 'FSD Bootcamp';
+  //   // je kunt dit ook uitschrijven als:
+  //   // if (student.course === 'FSD Bootcamp') {
+  //   //    return true
+  //   // }
