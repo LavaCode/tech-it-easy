@@ -17,7 +17,7 @@ const inventory = [
       bluetooth: false,
       ambiLight: false,
     },
-    originalStock: 23,
+    originalStock: 23,  //21
     sold: 2,
   },
   {
@@ -37,7 +37,7 @@ const inventory = [
       bluetooth: false,
       ambiLight: false,
     },
-    originalStock: 4,
+    originalStock: 4, //0
     sold: 4,
   },
   {
@@ -57,7 +57,7 @@ const inventory = [
       bluetooth: true,
       ambiLight: false,
     },
-    originalStock: 7,
+    originalStock: 7, //7
     sold: 0,
   },
   {
@@ -77,7 +77,7 @@ const inventory = [
       bluetooth: true,
       ambiLight: false,
     },
-    originalStock: 5,
+    originalStock: 5, //0
     sold: 5,
   },
   {
@@ -97,7 +97,7 @@ const inventory = [
       bluetooth: true,
       ambiLight: true,
     },
-    originalStock: 8,
+    originalStock: 8, //5
     sold: 3,
   },
   {
@@ -117,7 +117,7 @@ const inventory = [
       bluetooth: false,
       ambiLight: true,
     },
-    originalStock: 6,
+    originalStock: 6, //3
     sold: 3,
   },
   {
@@ -137,7 +137,7 @@ const inventory = [
       bluetooth: false,
       ambiLight: false,
     },
-    originalStock: 10,
+    originalStock: 10, //2
     sold: 8,
   },
   {
@@ -157,7 +157,25 @@ const inventory = [
       bluetooth: false,
       ambiLight: false,
     },
-    originalStock: 10,
+    originalStock: 10, //2
     sold: 8,
   },
 ];
+//Opdracht 1a:** Hoeveel exemplaren moeten we nog verkopen? Schrijf een functie die dit berekent. -- verwacht word 40
+function countInventory(inventoryToCount) {
+  // const inventory = inventoryToCount;
+  let count = 0; 
+
+  for (const inventory of inventoryToCount) {
+    const stock = inventory.originalStock - inventory.sold;
+    count += stock;
+  }
+  return count;
+}
+  console.log(`backstage count 'totaal te verkopen televisies': ${countInventory(inventory)}`);
+
+  //Opdracht 1b:** Zorg ervoor dat dit aantal _in het rood_ wordt weergegeven op de pagina
+  const displayTotalInventory = document.getElementById('totalStock'); 
+  displayTotalInventory.textContent = `Het totale aantal schermen dat nog op voorraad is: ${countInventory(inventory)}`;
+
+
