@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
     <link rel="stylesheet" href="styles.css">
-     
 </head>
+
 <body>
-    <h1 id="totalStock">Error</h1>
+    <img src="./assets/tech_it_easy.png" alt="Tech it easy" width="251px" height="145px">
+
+    <h1>Het totale aantal schermen dat op voorraad is: <span id="totalStock">totalStock:error</span></h1>
+    <h1>De totaalwaarde is: <span id="totalValue">totalValue: Error</span></h1>
+    <h1>De totaalwaarde van verkochte televisies is: <span id="totalSoldValue">totalSoldValue: Error</span></h1>
+
+    <div id="detailedDescription">Type televisie's:</div>
+    <button id="sortPrice">Sorteer op prijs</button>
+    <button id="showAmbilight">Toon ambilight televisie's</button>
+    <button id="soldOutTelevisions">Uitverkochte televisie's</button>
 
     <script src="./main.js"></script>
 </body>
+
 </html>
